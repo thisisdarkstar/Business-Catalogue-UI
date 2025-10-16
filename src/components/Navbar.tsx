@@ -1,21 +1,21 @@
-"use client";
-import React from "react";
-import { usePathname } from "next/navigation";
-import { Menu, X, Home as HomeIcon, Heart, User } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+'use client';
+import React from 'react';
+import { usePathname } from 'next/navigation';
+import { Menu, X, Home as HomeIcon, Heart, User } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 // Typed className joiner
 function cx(...classes: Array<string | false | null | undefined>): string {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 // Typed nav item
 type NavItem = { name: string; href: string; icon: LucideIcon };
 
 const links: NavItem[] = [
-  { name: "Home", href: "/", icon: HomeIcon },
-  { name: "Favourites", href: "/favourites", icon: Heart },
-  { name: "Profile", href: "/profile", icon: User },
+  { name: 'Home', href: '/', icon: HomeIcon },
+  { name: 'Favourites', href: '/favourites', icon: Heart },
+  { name: 'Profile', href: '/profile', icon: User },
 ];
 
 function NavLink({ item, activePath }: { item: NavItem; activePath: string }) {
@@ -24,10 +24,10 @@ function NavLink({ item, activePath }: { item: NavItem; activePath: string }) {
   return (
     <a
       href={item.href}
-      aria-current={active ? "page" : undefined}
+      aria-current={active ? 'page' : undefined}
       className={cx(
-        "inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium",
-        active ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+        'inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium',
+        active ? 'bg-gray-900 text-white' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900',
       )}
     >
       <Icon className="h-4 w-4" aria-hidden="true" />
@@ -38,7 +38,7 @@ function NavLink({ item, activePath }: { item: NavItem; activePath: string }) {
 
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);
-  const pathname = usePathname() || "/"; // SSR-safe active path
+  const pathname = usePathname() || '/'; // SSR-safe active path
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur">

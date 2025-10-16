@@ -1,14 +1,14 @@
 // app/profile/page.tsx
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 export default function ProfilePage() {
   // Mock user data — replace with real session or user context
   const user = {
-    name: "John Doe",
-    email: "john@example.com",
-    avatar: "https://i.pravatar.cc/150?img=3",
+    name: 'John Doe',
+    email: 'john@example.com',
+    avatar: 'https://i.pravatar.cc/150?img=3',
   };
 
   return (

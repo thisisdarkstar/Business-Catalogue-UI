@@ -1,6 +1,6 @@
-"use client"
-import Link from "next/link";
-import { GitBranch, Mail, XIcon as X } from "lucide-react";
+'use client';
+import Link from 'next/link';
+import { GitBranch, Mail, XIcon as X } from 'lucide-react';
 
 export function Footer(): React.JSX.Element {
   return (
@@ -37,7 +37,9 @@ export function Footer(): React.JSX.Element {
               <div className="h-8 w-8 rounded-2xl bg-white" />
               <span className="text-lg font-semibold tracking-tight">Business Catalog</span>
             </div>
-            <p className="text-sm text-gray-400">Curated products. Clean browsing. Save favourites and compare later.</p>
+            <p className="text-sm text-gray-400">
+              Curated products. Clean browsing. Save favourites and compare later.
+            </p>
             <div className="flex items-center gap-3 pt-2">
               <a
                 href="mailto:hello@example.com"
@@ -72,13 +74,19 @@ export function Footer(): React.JSX.Element {
             <h3 className="mb-3 text-sm font-semibold text-white/80">Catalog</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/" className="hover:text-gray-200">Home</Link>
+                <Link href="/" className="hover:text-gray-200">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/favourites" className="hover:text-gray-200">Favourites</Link>
+                <Link href="/favourites" className="hover:text-gray-200">
+                  Favourites
+                </Link>
               </li>
               <li>
-                <Link href="/profile" className="hover:text-gray-200">Profile</Link>
+                <Link href="/profile" className="hover:text-gray-200">
+                  Profile
+                </Link>
               </li>
             </ul>
           </div>
@@ -87,9 +95,21 @@ export function Footer(): React.JSX.Element {
           <div>
             <h3 className="mb-3 text-sm font-semibold text-white/80">Support</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/help" className="hover:text-gray-200">Help Center</Link></li>
-              <li><Link href="/contact" className="hover:text-gray-200">Contact</Link></li>
-              <li><Link href="/shipping" className="hover:text-gray-200">Shipping & Returns</Link></li>
+              <li>
+                <Link href="/help" className="hover:text-gray-200">
+                  Help Center
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-gray-200">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/shipping" className="hover:text-gray-200">
+                  Shipping & Returns
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -97,9 +117,21 @@ export function Footer(): React.JSX.Element {
           <div>
             <h3 className="mb-3 text-sm font-semibold text-white/80">Legal</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/terms" className="hover:text-gray-200">Terms</Link></li>
-              <li><Link href="/privacy" className="hover:text-gray-200">Privacy</Link></li>
-              <li><Link href="/cookies" className="hover:text-gray-200">Cookies</Link></li>
+              <li>
+                <Link href="/terms" className="hover:text-gray-200">
+                  Terms
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-gray-200">
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookies" className="hover:text-gray-200">
+                  Cookies
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

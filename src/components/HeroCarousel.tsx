@@ -1,9 +1,9 @@
-"use client";
-import * as React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+'use client';
+import * as React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 export type Banner = {
   id: string;
@@ -15,25 +15,22 @@ export type Banner = {
 
 const defaultBanners: Banner[] = [
   {
-    id: "1",
-    image:
-      "https://rukminim2.flixcart.com/fk-p-flap/3240/540/image/d1743320c28e67ba.jpg?q=60",
-    alt: "Mega Deals",
-    href: "/",
+    id: '1',
+    image: 'https://rukminim2.flixcart.com/fk-p-flap/3240/540/image/d1743320c28e67ba.jpg?q=60',
+    alt: 'Mega Deals',
+    href: '/',
   },
   {
-    id: "2",
-    image:
-      "https://rukminim2.flixcart.com/fk-p-flap/3240/540/image/56422e6e9bd5a22b.jpg?q=60",
-    alt: "Top Appliances",
-    href: "/",
+    id: '2',
+    image: 'https://rukminim2.flixcart.com/fk-p-flap/3240/540/image/56422e6e9bd5a22b.jpg?q=60',
+    alt: 'Top Appliances',
+    href: '/',
   },
   {
-    id: "3",
-    image:
-      "https://rukminim2.flixcart.com/fk-p-flap/3240/540/image/9501f8bbd62ad1f4.jpg?q=60",
-    alt: "Trending Fashion",
-    href: "/",
+    id: '3',
+    image: 'https://rukminim2.flixcart.com/fk-p-flap/3240/540/image/9501f8bbd62ad1f4.jpg?q=60',
+    alt: 'Trending Fashion',
+    href: '/',
   },
 ];
 
@@ -43,15 +40,19 @@ export default function HeroCarousel({
   autoplayDelay = 3000,
 }: {
   banners?: Banner[];
-  options?: any;
+  options?: object;
   autoplayDelay?: number;
 }): React.JSX.Element {
   const autoplay = React.useRef(
-    Autoplay({ delay: autoplayDelay, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({
+      delay: autoplayDelay,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    }),
   );
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start", skipSnaps: false, ...(options || {}) },
-    [autoplay.current]
+    { loop: true, align: 'start', skipSnaps: false, ...(options || {}) },
+    [autoplay.current],
   );
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -61,7 +62,7 @@ export default function HeroCarousel({
     if (!emblaApi) return;
     const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
     setScrollSnaps(emblaApi.scrollSnapList());
-    emblaApi.on("select", onSelect);
+    emblaApi.on('select', onSelect);
     onSelect();
   }, [emblaApi]);
 
@@ -77,8 +78,11 @@ export default function HeroCarousel({
           <div className="embla" ref={emblaRef}>
             <div className="embla__container flex touch-pan-y touch-pinch-zoom">
               {banners.map((b) => (
-                <div key={b.id} className="embla__slide relative min-w-[100vw] shrink-0 grow-0 basis-[100vw]">
-                  <Link href={b.href || "#"} className="block" aria-label={b.alt}>
+                <div
+                  key={b.id}
+                  className="embla__slide relative min-w-[100vw] shrink-0 grow-0 basis-[100vw]"
+                >
+                  <Link href={b.href || '#'} className="block" aria-label={b.alt}>
                     <div className="relative w-full bg-gray-50 h-[27vh] sm:h-[30vh] md:h-[25vh] lg:h-[27vh]">
                       <Image
                         src={b.image}
@@ -101,7 +105,13 @@ export default function HeroCarousel({
             onClick={prev}
             className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-gray-200 bg-white/90 p-2 backdrop-blur hover:bg-white"
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
@@ -110,7 +120,13 @@ export default function HeroCarousel({
             onClick={next}
             className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-gray-200 bg-white/90 p-2 backdrop-blur hover:bg-white"
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
@@ -123,8 +139,8 @@ export default function HeroCarousel({
                 onClick={() => scrollTo(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 className={
-                  "h-2 w-2 rounded-full transition-all " +
-                  (i === selectedIndex ? "bg-gray-900 w-4" : "bg-gray-300 hover:bg-gray-400")
+                  'h-2 w-2 rounded-full transition-all ' +
+                  (i === selectedIndex ? 'bg-gray-900 w-4' : 'bg-gray-300 hover:bg-gray-400')
                 }
               />
             ))}

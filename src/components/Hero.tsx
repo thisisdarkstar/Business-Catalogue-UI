@@ -1,8 +1,6 @@
-"use client"
-import React from 'react'
+'use client';
+import React from 'react';
 
 export default function Hero() {
-  return (
-    <div>Hero</div>
-  )
+  return <div>Hero</div>;
 }

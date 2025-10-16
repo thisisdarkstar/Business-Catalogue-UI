@@ -1,18 +1,16 @@
 // app/favourites/page.tsx
-"use client"
+'use client';
 
-import React from "react";
-import { products } from "@/data/products";
-import ProductCardMini from "@/components/ProductCardMini"; // or use ProductCardMini
-import Link from "next/link";
+import React from 'react';
+import { products } from '@/data/products';
+import ProductCardMini from '@/components/ProductCardMini'; // or use ProductCardMini
+import Link from 'next/link';
 
 // Dummy list of favorite product IDs (in a real app, fetch from user data)
-const favouriteIds = ["m1", "w2", "b1"];
+const favouriteIds = ['m1', 'w2', 'b1'];
 
 export default function FavouritesPage() {
-  const favourites = products.filter((product) =>
-    favouriteIds.includes(product.id)
-  );
+  const favourites = products.filter((product) => favouriteIds.includes(product.id));
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
@@ -27,7 +25,8 @@ export default function FavouritesPage() {
               key={product.id}
               href={`/category/${product.category}/product/${product.id}`}
               className="flex flex-wrap gap-6"
-            ><ProductCardMini
+            >
+              <ProductCardMini
                 key={product.id}
                 image={product.thumbnail}
                 title={product.title}
@@ -40,4 +39,3 @@ export default function FavouritesPage() {
     </div>
   );
 }
-
